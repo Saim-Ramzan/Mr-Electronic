@@ -92,7 +92,8 @@ export const fetchProducts = createAsyncThunk(
 
 export const selectProducts = createAsyncThunk(
   "products/selectProducts",
-  async (payload: ProductPayload) => {
+  // eslint-disable-next-line
+  async (payload: any) => {
     try {
       console.log("Payload received:", payload);
 
