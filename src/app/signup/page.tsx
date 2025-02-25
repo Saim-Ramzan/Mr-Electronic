@@ -53,9 +53,11 @@ const Signup = () => {
                             console.error(error.message)
                         })
                     }
+                    // eslint-disable-next-line
                 }).catch((error) => {
                     toast.error(error.message)
                 })
+                // eslint-disable-next-line
             } catch (error) {
                 // toast.error(error);
             }
@@ -73,10 +75,13 @@ const Signup = () => {
             }).catch((error) => {
                 console.error(error.message)
             })
+            // eslint-disable-next-line
         } catch (error) {
-            // console.error(error.message)
+            // eslint-disable-next-line
+            console.error(error)
         }
     }
+
     /* eslint-disable */
     return <div>
         <div className="h-screen md:flex">

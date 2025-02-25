@@ -2,12 +2,10 @@
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
-  SidebarHeader,
 } from "@/components/ui/sidebar";
 
-import { ShoppingBasket, Home, Inbox, Search, Settings, PackageSearch } from "lucide-react";
+import { ShoppingBasket, Home, Inbox,  Settings, PackageSearch } from "lucide-react";
 
 import {
   SidebarGroupContent,

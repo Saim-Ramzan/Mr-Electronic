@@ -14,7 +14,9 @@
 /coverage
 
 # next.js 
-/.next 
+.next/
+
+# /.next 
 
 /out/
 .idea/
@@ -37,8 +39,8 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env
 
-# vercel
-.vercel
+# # vercel
+# .vercel
 
 # typescript
 *.tsbuildinfo

@@ -39,7 +39,7 @@ const Login = () => {
 						toast.success("Login Successful")
 						router.push("/home")
 					}else if ( userCredential.user) {
-						const docRef = await addDoc(collection(db, user.uid), {
+						 await addDoc(collection(db, user.uid), {
 							uid: user.uid,
 							username: user.displayName,
 							email: user.email,
@@ -47,9 +47,11 @@ const Login = () => {
 					}else{
 						toast.error("Please Verify Your Email")
 					}
+					// eslint-disable-next-line
 				}).catch((error) => {
 					toast.error(error.message)
 				})
+				// eslint-disable-next-line
 			} catch (error:any) {
 				toast.error(error.message)
 			}
@@ -67,6 +69,7 @@ const Login = () => {
             }).catch((error) => {
                 toast.error(error.message)
             })
+			// eslint-disable-next-line
         } catch (error:any) {
             toast.error(error.message)
         }

@@ -1,6 +1,6 @@
 'use server'
 import { cookies } from "next/headers";
-
+// eslint-disable-next-line
 export async function setCookie (name: string, token:any) {
     const cookieStore = await cookies()
     cookieStore.set(name, token)

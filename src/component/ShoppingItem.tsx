@@ -7,18 +7,18 @@ function ShoppingItem() {
     <div className="w-full mb-5 ">
       <h1 className="text-center text-3xl   font-bold mt-5">Show Now</h1>
       <div className="mt-10  max-w-[90%] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center">
-          {data.map(() => (
-            <div className="flex justify-center">
-            <div className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+          {data.map((_,index) => (
+            <div key={index} className="flex justify-center">
+            <div className="rounded-[22px]  max-w-sm p-4 bg-white dark:bg-zinc-900 w-full">
               <Image
                 src={`/jordans.webp`}
                 alt="jordans"
-                height="400"
-                width="400"
+                height={400}
+                width={400}
                 className="object-contain"
               />
-              <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+              <p className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
                 Air Jordan 4 Retro Reimagined
               </p>
 

@@ -14,7 +14,7 @@ function HeroSection() {
     {
       text: "Center",
       className:
-        "text-blue-500 text-4xl md:text-7xl font-bold dark:text-blue-500",
+        "text-blue-500 text-xl sm:text-4xl md:text-7xl font-bold dark:text-blue-500",
     },
   ];
   return (
@@ -24,9 +24,9 @@ function HeroSection() {
         fill="white"
       />
       <div className="relative p-4 w-full text-center z-10">
-        <TypewriterEffectSmooth className="justify-center" words={words} />
-        <p className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-[80%] mx-auto">
-          A "Master of Mobile Repairing and Parts Center" is a dedicated
+        <TypewriterEffectSmooth className="justify-center flex-wrap text-xl sm text-wrap" words={words} />
+        <p className="mt-4 font-normal text-lg md:text-lg text-neutral-300 max-w-[80%] mx-auto">
+          {`A "Master of Mobile Repairing and Parts Center" is a dedicated
           facility specializing in repairing and maintaining mobile phones and
           providing high-quality spare parts. These centers cater to a wide
           range of mobile issues, including screen replacement, battery
@@ -37,7 +37,7 @@ function HeroSection() {
           batteries, motherboards, and accessories, catering to various brands
           and models. The focus is on offering cost-effective, quick, and
           trustworthy solutions to enhance the performance and longevity of
-          mobile devices.
+          mobile devices.`}
         </p>
         <div className="mt-4">
           <Link href={"/shop"}>

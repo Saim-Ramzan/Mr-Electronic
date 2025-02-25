@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function ProductView() {
@@ -8,7 +9,7 @@ function ProductView() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mx-auto max-md:px-2 ">
             <div className="img">
               <div className="img-box h-full max-lg:mx-auto ">
-                <img
+                <Image
                   src="https://pagedone.io/asset/uploads/1700471600.png"
                   alt="Yellow Tropical Printed Shirt image"
                   className="max-lg:mx-auto lg:ml-auto h-full object-cover"

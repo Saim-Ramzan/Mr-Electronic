@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { LucideShoppingBag, EyeIcon, LocateFixed, Wallet, ChartColumn, ShoppingBasket, HandCoinsIcon, Loader } from "lucide-react";
 import { RootState, AppDispatch, } from "@/lib/store";
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,9 +8,9 @@ import ProductListLoding from "@/component/common/ProductListLoding";
 import toast from "react-hot-toast";
 
 function page() {
+/* eslint-disable */
     const dispatch = useDispatch<AppDispatch>();
     const { products, loading, error,productsLength } = useSelector((state: RootState) => state.products);
-
     useEffect(() => {
       dispatch(fetchProducts());
     }, [dispatch])
@@ -20,6 +20,7 @@ function page() {
     if(error)(
         toast.error(error)
     )
+    /* eslint-disable */
   return (
     <div className="flex flex-1 flex-col gap-6 p-6 bg-[#dedeff38]">
       <div className="grid gap-6 md:grid-cols-3  p-6 rounded-xl">

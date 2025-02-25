@@ -3,14 +3,13 @@ import React, { Suspense, useEffect, useState } from "react";
 import { HoveredLink, Menu, MenuItem } from "@/component/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import type { NextRequest } from "next/server";
-import { Button } from "./ui/moving-border";
 import { clearCookie, getCookie } from "@/lib/cookies";
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { collection, getDocs } from "firebase/firestore"; 
 import { db } from "@/lib/firebase";
 import CustomButton from "./common/CustomButton";
+import CustomizedBadges from "./common/CustomizedBadges";
 
 interface UserData{
   name: string;
@@ -27,7 +26,6 @@ function Navbar({ className }: { className?: string }) {
   const getToken = async () => {
     const token = await getCookie("token");
     setUserToken(token  as string)
-    console.log("token",token)
     setIsAuthenticated(token !== undefined);
   }
 
@@ -55,6 +53,7 @@ function Navbar({ className }: { className?: string }) {
   useEffect(() => {
     getToken()
     getUserData()
+    // eslint-disable-next-line
   },[])
 
   
@@ -64,8 +63,9 @@ function Navbar({ className }: { className?: string }) {
   return (
     <>
     {isAuthenticated ?
+    
     <Suspense fallback={<p>Profile</p>}>
-    <Stack direction={"row"} alignItems={"center"} spacing={2} className="absolute z-30 top-10  right-5">
+    <Stack direction={"row"} alignItems={"flex-start"} spacing={2} className="bg-black w-full flex justify-end pt-32 md:p-10 ">
     <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
     <Link  href="/login" onClick={handleLogout}>
       <CustomButton Color="white" bgColor="green" handleClick={handleLogout} name="Logout"/>
@@ -97,6 +97,9 @@ function Navbar({ className }: { className?: string }) {
             item="Contact Us"
             ></MenuItem>
         </Link>  
+      <div className=" absolute justify-center top-4 right-10">
+      <CustomizedBadges badgeCount={10}  />
+      </div>
       </Menu> 
     </div>
     </>

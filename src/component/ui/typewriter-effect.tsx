@@ -42,6 +42,7 @@ export const TypewriterEffect = ({
         }
       );
     }
+    // eslint-disable-next-line
   }, [isInView]);
 
   const renderWords = () => {

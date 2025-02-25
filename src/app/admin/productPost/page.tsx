@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
@@ -9,6 +8,7 @@ import { Stack } from "@mui/material";
 import { useFormik } from "formik";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import Image from "next/image";
 
 function ProductPost() {
   const [imagePreviews, setImagePreviews] = useState<string[]>([]);
@@ -66,8 +66,6 @@ function ProductPost() {
       >
         <Stack
           sx={{ "& .MuiTextField-root": { m: 1 } }}
-          noValidate
-          autoComplete="off"
         >
           <TextField
             onChange={handleChange}
@@ -114,7 +112,7 @@ function ProductPost() {
             <div className="mt-4 flex flex-wrap gap-1">
               {imagePreviews.map((preview, index) => (
                 <div key={index} className="w-32 h-32">
-                  <img
+                  <Image
                     src={preview}
                     alt={`Preview ${index + 1}`}
                     className="w-full h-full object-cover border rounded"

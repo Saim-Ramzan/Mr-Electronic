@@ -108,7 +108,7 @@ export const ProductItem = ({
     </Link>
   );
 };
-
+// eslint-disable-next-line
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link

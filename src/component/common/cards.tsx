@@ -2,19 +2,20 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Image from "next/image";
 
 interface Props {
   name: string;
   description: string;
   images: [];
   price: number
+  addtoCard: VoidFunction
 }
 const responsive = {
   superLargeDesktop: {
@@ -35,12 +36,12 @@ const responsive = {
   },
 };
 
-export default function ImgMediaCard({ name, description, images, price }: Props) {
+export default function ImgMediaCard({ name, description, images, price, addtoCard }: Props) {
   return (
     <Card sx={{ maxWidth: 345, maxheight: 345 }} className="w-[345px] border border-l-pink-50 shadow-lg ">
     <Carousel responsive={responsive}>
         {images.map((image, index) => (
-         <img src={image} alt={name} style={{ width: "100%", height: "250px", objectFit: "cover" }} />
+         <Image key={index} src={image} alt={name} style={{ width: "100%", height: "250px", objectFit: "cover" }} />
 
         ))}
       </Carousel>
@@ -67,7 +68,7 @@ export default function ImgMediaCard({ name, description, images, price }: Props
         </button>
       </div>
     <CardActions >
-      <Button size="medium" startIcon={<AddShoppingCartIcon />}>
+      <Button size="medium" onClick={addtoCard} startIcon={<AddShoppingCartIcon />}>
         Add to cart
       </Button>
       <Button size="medium" startIcon={<VisibilityIcon />}>
