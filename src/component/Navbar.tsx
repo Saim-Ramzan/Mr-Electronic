@@ -1,6 +1,6 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
-import { HoveredLink, Menu, MenuItem } from "@/component/ui/navbar-menu";
+import { Menu, MenuItem } from "@/component/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { clearCookie, getCookie } from "@/lib/cookies";

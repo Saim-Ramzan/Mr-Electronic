@@ -16,7 +16,7 @@ interface ProductsInterface {
 }
 function Shopping() {
   const dispatch = useDispatch<AppDispatch>();
-  const { products,  error, productsLength } = useSelector(
+  const { products,  error } = useSelector(
     (state: RootState) => state.products
   );
 

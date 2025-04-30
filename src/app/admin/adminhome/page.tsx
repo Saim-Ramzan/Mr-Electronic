@@ -8,7 +8,7 @@ import { fetchProducts } from "@/app/store/Slice";
 
 
 export default function Admin() {
-  const { products,  loading, productsLength } = useSelector(
+  const {  loading, productsLength } = useSelector(
     (state: RootState) => state.products
   );
   

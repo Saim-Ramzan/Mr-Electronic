@@ -7,6 +7,7 @@ import Image from "next/image";
 interface Course {
   id: number;
   FeatureService: string;
+  // eslint-disable-next-line
   image: string | any;
   buttonName: string;
 }
@@ -29,6 +30,7 @@ function FeatureCards() {
         <BackgroundGradient className="rounded-[22px] max-w-sm p-4 bg-white dark:bg-zinc-900 w-full">
           <Image
             src={card.image}
+            // eslint-disable-next-line
             alt={'card.image'}
             height={400}
             width={400}
