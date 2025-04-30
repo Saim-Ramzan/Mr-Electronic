@@ -9,12 +9,12 @@ function HeroSection() {
     {
       text: "Master of repairing",
       className:
-        "mt-20 md:mt-0 text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
+        "mt-10 sm:mt-20 text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
     },
     {
       text: "Center",
       className:
-        "text-blue-500 text-xl sm:text-4xl md:text-7xl font-bold dark:text-blue-500",
+        "text-blue-500 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold dark:text-blue-500",
     },
   ];
   return (
