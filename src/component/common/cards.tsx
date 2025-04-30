@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -40,9 +41,10 @@ export default function ImgMediaCard({ name, description, images, price, addtoCa
   return (
     <Card sx={{ maxWidth: 345, maxheight: 345 }} className="w-[345px] border border-l-pink-50 shadow-lg ">
     <Carousel responsive={responsive}>
-        {images.map((image, index) => (
-         <Image key={index} src={image} alt={name} style={{ width: "100%", height: "250px", objectFit: "cover" }} />
-
+        {images?.map((image, index) => (
+            <div className="relative w-full h-[250px]" key={index}>
+            <Image src={image} alt={name} fill className="object-cover" />
+            </div>
         ))}
       </Carousel>
     <CardContent className="h-40">

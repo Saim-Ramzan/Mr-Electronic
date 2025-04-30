@@ -24,7 +24,6 @@ function Shopping() {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  console.log("productsLength", productsLength);
 
   if (error) toast.error(error);
 
@@ -41,12 +40,12 @@ function Shopping() {
   return (
     <div>
       <Grid container gap={2} justifyContent={"center"}>
-        {products.map((item) => (
+        {products?.map((item) => (
           <ImgMediaCard
-            description={item.description}
-            name={item.name}
-            price={item.price}
-            images={item.images}
+            description={item?.description}
+            name={item?.name}
+            price={item?.price}
+            images={item?.images}
             addtoCard={() => addToCard(item)}
             key={item.id}
           />

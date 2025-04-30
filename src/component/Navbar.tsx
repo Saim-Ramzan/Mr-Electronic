@@ -36,7 +36,6 @@ function Navbar({ className }: { className?: string }) {
   
       const userData: UserData[] = [];
       querySnapshot.forEach((doc) => {
-        console.log("doc",doc)
         userData.push(doc.data() as UserData);
       });
   
@@ -84,12 +83,13 @@ function Navbar({ className }: { className?: string }) {
             item="Home"
           ></MenuItem>
         </Link>
-
-        <MenuItem setActive={setActive} active={active} item="Shop">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink  href="/shop">Shop</HoveredLink>
-          </div>
-        </MenuItem>
+        <Link href={"/shop"}>
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Shop"
+          ></MenuItem>
+        </Link>
         <Link href={"/contact"}>
           <MenuItem
             setActive={setActive}
