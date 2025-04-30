@@ -39,7 +39,7 @@ const Login = () => {
 						toast.success("Login Successful")
 						router.push("/home")
 					}else if ( userCredential.user) {
-						 await addDoc(collection(db, user.uid), {
+						 await addDoc(collection(db, "users"), {
 							uid: user.uid,
 							username: user.displayName,
 							email: user.email,
@@ -66,6 +66,11 @@ const Login = () => {
 				setCookie("token",user.uid)
 				router.push("/home")
                 toast.success("Login Successful")
+				 addDoc(collection(db, "users"), {
+					uid: user.uid,
+					username: user.displayName,
+					email: user.email,
+				  });
             }).catch((error) => {
                 toast.error(error.message)
             })
