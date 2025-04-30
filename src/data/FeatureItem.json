@@ -2,39 +2,34 @@
     {
       "id":1,
       "FeatureService": "Laptop Repairing",
-      "image": "https://plus.unsplash.com/premium_photo-1663047430590-f2947119c3f0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image": "https://i.ibb.co/HDqcjq3S/laptop.jpg",
       "buttonName": "Explore"
     },
     {
       "id":2,
       "FeatureService": "Smartphone Repairing",
-      "image": "https://example.com/images/smartphone-repair.jpg",
+      "image": "https://i.ibb.co/8L0ChBy5/smartphone.jpg",
       "buttonName": "Explore"
     },
     {
       "id":3,
       "FeatureService": "Tablet Repairing",
-      "image": "https://example.com/images/tablet-repair.jpg",
+      "image": "https://i.ibb.co/Wp34xbLb/tablet.jpg",
       "buttonName": "Explore"
     },
     {
       "id":4,
       "FeatureService": "Battery Replacement",
-      "image": "https://example.com/images/battery-replacement.jpg",
+      "image": "https://i.ibb.co/9LJ9G2S/battery.jpg",
       "buttonName": "Explore"
     },
     {
       "id":5,
       "FeatureService": "Screen Replacement",
-      "image": "https://example.com/images/screen-replacement.jpg",
-      "buttonName": "Explore"
-    },
-    {
-      "id":6,
-      "FeatureService": "Car Repairing",
-      "image": "https://example.com/images/screen-Car-Repairing.jpg",
+      "image": "https://i.ibb.co/Ldss5z7r/screen.jpg",
       "buttonName": "Explore"
     }
   ]
+   
   
   

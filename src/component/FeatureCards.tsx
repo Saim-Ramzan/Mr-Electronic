@@ -7,7 +7,7 @@ import Image from "next/image";
 interface Course {
   id: number;
   FeatureService: string;
-  image: string;
+  image: string | any;
   buttonName: string;
 }
 function FeatureCards() {
@@ -28,8 +28,8 @@ function FeatureCards() {
       <div key={card.FeatureService} className="flex justify-center">
         <BackgroundGradient className="rounded-[22px] max-w-sm p-4 bg-white dark:bg-zinc-900 w-full">
           <Image
-            src={`/${card.image}`}
-            alt={card.FeatureService}
+            src={card.image}
+            alt={'card.image'}
             height={400}
             width={400}
             className="object-cover w-full rounded-lg"
