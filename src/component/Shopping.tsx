@@ -37,6 +37,9 @@ function Shopping() {
     addedItems.push({ ...item });
     dispatch(selectProducts(addedItems));
   };
+  const handleViewItem = (item: object) => {
+    console.log("item", item);
+  }
   return (
     <div>
       <Grid container gap={2} justifyContent={"center"}>
@@ -47,6 +50,7 @@ function Shopping() {
             price={item?.price}
             images={item?.images}
             addtoCard={() => addToCard(item)}
+            handleView={() => handleViewItem(item)}
             key={item.id}
           />
         ))}

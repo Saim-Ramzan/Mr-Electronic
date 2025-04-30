@@ -17,6 +17,7 @@ interface Props {
   images: [];
   price: number
   addtoCard: VoidFunction
+  handleView: VoidFunction 
 }
 const responsive = {
   superLargeDesktop: {
@@ -37,7 +38,7 @@ const responsive = {
   },
 };
 
-export default function ImgMediaCard({ name, description, images, price, addtoCard }: Props) {
+export default function ImgMediaCard({ name, description, images, price, addtoCard,handleView }: Props) {
   return (
     <Card sx={{ maxWidth: 345, maxheight: 345 }} className="w-[345px] border border-l-pink-50 shadow-lg ">
     <Carousel responsive={responsive}>
@@ -73,7 +74,7 @@ export default function ImgMediaCard({ name, description, images, price, addtoCa
       <Button size="medium" onClick={addtoCard} startIcon={<AddShoppingCartIcon />}>
         Add to cart
       </Button>
-      <Button size="medium" startIcon={<VisibilityIcon />}>
+      <Button size="medium" onClick={handleView} startIcon={<VisibilityIcon />}>
         View
       </Button>
     </CardActions>
