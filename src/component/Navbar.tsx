@@ -98,7 +98,8 @@ function Navbar({ className }: { className?: string }) {
             ></MenuItem>
         </Link>  
       <div className=" absolute justify-center top-4 right-10">
-      <CustomizedBadges badgeCount={10}  />
+        {/* shop cart count Item */}
+      <CustomizedBadges badgeCount={0}  />
       </div>
       </Menu> 
     </div>

@@ -7,6 +7,7 @@ import { RootState, AppDispatch } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts, selectProducts } from "@/app/store/Slice";
 import toast from "react-hot-toast";
+import { Loader } from "lucide-react";
 // eslint-disable-next-line
 interface ProductsInterface {
   name: string;
@@ -16,7 +17,7 @@ interface ProductsInterface {
 }
 function Shopping() {
   const dispatch = useDispatch<AppDispatch>();
-  const { products,  error } = useSelector(
+  const { products, loading, error } = useSelector(
     (state: RootState) => state.products
   );
 
@@ -41,21 +42,28 @@ function Shopping() {
     console.log("item", item);
   }
   return (
-    <div>
-      <Grid container gap={2} justifyContent={"center"}>
-        {products?.map((item) => (
-          <ImgMediaCard
-            description={item?.description}
-            name={item?.name}
-            price={item?.price}
-            images={item?.images}
-            addtoCard={() => addToCard(item)}
-            handleView={() => handleViewItem(item)}
-            key={item.id}
-          />
-        ))}
-      </Grid>
-    </div>
+<div>
+  <Grid container gap={2} justifyContent={"center"}>
+    {loading ? (
+      <div className="flex justify-center items-center w-full h-40">
+        <Loader color="white" width={30} />
+      </div>
+    ) : (
+      products?.map((item) => (
+        <ImgMediaCard
+          description={item?.description}
+          name={item?.name}
+          price={item?.price}
+          images={item?.images}
+          addtoCard={() => addToCard(item)}
+          handleView={() => handleViewItem(item)}
+          key={item.id}
+        />
+      ))
+    )}
+  </Grid>
+</div>
+
   );
 }
 
